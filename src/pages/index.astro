@@ -1,13 +1,10 @@
 ---
-import { getEntry } from "astro:content";
-import Card from "../components/Card.astro";
-import Layout from "../layouts/Layout.astro";
+import { getEntry } from 'astro:content';
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
 
-const entry = await getEntry("index", "my-first-md-file");
+const entry = await getEntry('index', 'my-first-md-file');
 const { Content, headings } = await entry.render();
-console.log(entry);
-console.log(Content);
-console.log(headings);
 
 export const prerender = true;
 ---

@@ -4,8 +4,8 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('skills');
-  return blogEntries.map((entry) => ({
+  const skillsEntries = await getCollection('skills');
+  return skillsEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -16,11 +16,10 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-
-// const { Content } = await entry.render();
+const { Content } = await entry.render();
 ---
 
 <h1>{entry.data.name}</h1>
 
 <p>{entry.data.description}</p>
-<!-- <Content /> -->
+<Content />
