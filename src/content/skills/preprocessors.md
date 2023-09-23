@@ -1,4 +1,4 @@
 ---
-name: CSS
+name: Preprocessors
 description: Lorem Ipsum
 ---

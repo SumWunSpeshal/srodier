@@ -1,4 +1,4 @@
 ---
-name: JavaScript
+name: Hosting
 description: Lorem Ipsum
 ---
