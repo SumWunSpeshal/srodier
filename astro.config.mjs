@@ -5,10 +5,13 @@ import vercel from '@astrojs/vercel/serverless';
 // import vercel from '@astrojs/vercel/serverless';
 // Or a completely static build
 // import vercel from '@astrojs/vercel/static';
+import tailwind from "@astrojs/tailwind";
 
+// https://astro.build/config
 export default defineConfig({
   output: 'server',
   adapter: vercel({
-    edgeMiddleware: true,
+    edgeMiddleware: true
   }),
+  integrations: [tailwind()]
 });
