@@ -1,5 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+import Markdown from '../components/Markdown.astro';
 
 export const prerender = true;
 
@@ -21,5 +22,5 @@ const { Content } = await entry.render();
 
 <h1>{entry.data.title}</h1>
 
-<p>{entry.data.description}</p>
+<Markdown content={entry.data.description} />
 <Content />

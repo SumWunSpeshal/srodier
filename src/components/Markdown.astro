@@ -1,0 +1,12 @@
+---
+import { processor } from '../lib/markdownProcessor';
+
+type Props = {
+  content: string;
+};
+
+const { content } = Astro.props;
+const result = await processor.render(content);
+---
+
+<Fragment set:html={result.code} />
