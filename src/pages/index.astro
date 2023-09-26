@@ -1,8 +1,9 @@
 ---
-import { getEntry } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
 const entry = await getEntry('index', 'my-first-md-file');
+const skills = await getCollection('skills');
 const { Content, headings } = await entry.render();
 
 export const prerender = true;
@@ -11,5 +12,16 @@ export const prerender = true;
 <Layout title="Welcome to Astro.">
   <main>
     <Content />
+
+    <h2>Skills</h2>
+    <ul>
+      {
+        skills.map((skill) => (
+          <li>
+            <a href={`/${skill.slug}`}>{skill.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Layout>
