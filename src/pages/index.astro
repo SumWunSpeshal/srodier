@@ -18,7 +18,15 @@ export const prerender = true;
       {
         skills.map((skill) => (
           <li>
-            <a href={`/${skill.slug}`}>{skill.data.title}</a>
+            <a href={`/${skill.slug}`}>
+              <img
+                class="w-36"
+                transition:name={skill.data.title}
+                src={skill.data.previewImgUrl}
+                alt="ALT"
+              />
+              <span>{skill.data.title}</span>
+            </a>
           </li>
         ))
       }

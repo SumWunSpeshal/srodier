@@ -7,6 +7,7 @@ const skillCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    previewImgUrl: z.string(),
   }),
 });
 

@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Markdown from '../components/Markdown.astro';
+import Layout from '../layouts/Layout.astro';
 
 export const prerender = true;
 
@@ -20,7 +21,17 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<h1>{entry.data.title}</h1>
+<Layout title="aksjdh">
+  <div class="fixed inset-0">
+    <img
+      class="object-cover w-full h-full"
+      transition:name={entry.data.title}
+      src={entry.data.previewImgUrl}
+      alt=""
+    />
+  </div>
+  <h1>{entry.data.title}</h1>
 
-<Markdown>{entry.data.description}</Markdown>
-<Content />
+  <Markdown>{entry.data.description}</Markdown>
+  <Content />
+</Layout>
