@@ -1,4 +1,4 @@
 ---
-name: Frontend Frameworks
+title: Frontend Frameworks
 description: Lorem Ipsum
 ---

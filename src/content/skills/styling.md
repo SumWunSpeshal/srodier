@@ -1,4 +1,4 @@
 ---
-name: Styling
+title: Styling
 description: Lorem Ipsum
 ---

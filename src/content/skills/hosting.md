@@ -1,4 +1,4 @@
 ---
-name: Hosting
+title: Hosting
 description: Lorem Ipsum
 ---

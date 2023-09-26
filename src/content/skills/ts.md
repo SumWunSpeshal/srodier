@@ -1,4 +1,4 @@
 ---
-name: TypeScript
+title: TypeScript
 description: Lorem Ipsum
 ---
