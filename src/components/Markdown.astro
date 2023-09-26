@@ -1,11 +1,7 @@
 ---
 import { processor } from '../lib/markdownProcessor';
 
-type Props = {
-  content: string;
-};
-
-const { content } = Astro.props;
+const content = await Astro.slots.render('default');
 const result = await processor.render(content);
 ---
 
