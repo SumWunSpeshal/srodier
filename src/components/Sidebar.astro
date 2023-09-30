@@ -1,1 +1,17 @@
-<aside class="bg-red-300">Sacha Rodier</aside>
+---
+import { getEntry } from 'astro:content';
+
+const { data } = await getEntry('sidebar', 'index');
+---
+
+<aside class="bg-red-300">
+  <div>
+    <p>{data.name}</p>
+    <p>{data.title}</p>
+    <p>{data.description}</p>
+    <p>{data.contact.city}</p>
+    <p>{data.contact.country}</p>
+    <p>{data.contact.xing}</p>
+    <p>{data.contact.github}</p>
+  </div>
+</aside>
