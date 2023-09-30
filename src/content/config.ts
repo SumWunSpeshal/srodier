@@ -34,7 +34,9 @@ const sidebarCollection = defineCollection({
     description: z.string(),
     contact: z.object({
       city: z.string(),
-      email: z.string().email(),
+      country: z.string(),
+      xing: z.string().url(),
+      github: z.string().url(),
     }),
   }),
 });
