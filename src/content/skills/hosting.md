@@ -1,5 +1,7 @@
 ---
 title: Hosting
-description: Lorem Ipsum
+description:
+  short: Lorem Ipsum
+  long: LOREM IPSUM
 previewImgUrl: logo.png
 ---

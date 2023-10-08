@@ -6,5 +6,6 @@ contact:
   city: Hannover
   country: Germany
   xing: https://www.xing.com/profile/Sacha_Rodier
+  linkedin: https://www.linkedin.com/in/sacha-rodier-483192141/
   github: https://github.com/SumWunSpeshal
 ---

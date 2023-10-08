@@ -6,7 +6,10 @@ const skillCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.object({
+      short: z.string(),
+      long: z.string(),
+    }),
     previewImgUrl: z.string(),
   }),
 });
@@ -36,6 +39,7 @@ const sidebarCollection = defineCollection({
       city: z.string(),
       country: z.string(),
       xing: z.string().url(),
+      linkedin: z.string().url(),
       github: z.string().url(),
     }),
   }),
