@@ -8,5 +8,7 @@ description:
     I prefer serverless environments and am still looking for a project to deploy at the edge.
 
     If a project needs a bit of CI/CD goodness, I get by editing some Github Actions quite ok.
+
+    I like working in Linux for personal use and during development but have previously avoided managing the webserver and would rather keep it that way.
 previewImgUrl: logo.png
 ---
