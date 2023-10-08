@@ -18,7 +18,15 @@ const workExperienceCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    from: z.date().transform((str) => new Date(str)),
+    until: z
+      .date()
+      .optional()
+      .transform((str) => new Date(str ?? Date.now())),
+    description: z.object({
+      short: z.string(),
+      long: z.string(),
+    }),
   }),
 });
 
