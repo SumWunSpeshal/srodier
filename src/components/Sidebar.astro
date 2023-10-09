@@ -4,7 +4,7 @@ import { getEntry } from 'astro:content';
 const { data } = await getEntry('sidebar', 'index');
 ---
 
-<aside class="bg-red-300">
+<aside class="bg-red-300 w-96 shrink-0">
   <div>
     <p>{data.name}</p>
     <p>{data.title}</p>

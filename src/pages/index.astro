@@ -25,7 +25,9 @@ export const prerender = true;
                 src={skill.data.previewImgUrl}
                 alt="ALT"
               />
-              <span>{skill.data.title}</span>
+              <h2 transition:name={skill.data.title + '_title'}>
+                {skill.data.title}
+              </h2>
             </a>
           </li>
         ))
