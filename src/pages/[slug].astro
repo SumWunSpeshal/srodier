@@ -24,17 +24,17 @@ const { Content } = await entry.render();
 <Layout title={entry.data.title}>
   <div class="absolute w-full h-[100dvh]">
     <img
-      class="object-cover w-full h-full"
+      class="object-cover w-full h-full blur-xl brightness-50 scale-110"
       transition:name={entry.data.title}
       src={entry.data.previewImgUrl}
       alt=""
     />
   </div>
-  <h2 transition:name={entry.data.title + '_title'}>
+  <h2 transition:name={entry.data.title + '_title'} class="text-white">
     {entry.data.title}
   </h2>
   <div
-    class="relative z-10 delay-200"
+    class="relative z-10 delay-200 text-white"
     transition:name={entry.data.title + '_no-counter-part'}
   >
     <a href="/">Back</a>

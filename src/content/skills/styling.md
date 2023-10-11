@@ -15,5 +15,5 @@ description:
     All paradigms and tools that have emerged over the past ~5 years have landed in one or more of my projects, in search of the perfect one to rule them all. 
     Going from traditional preprocessors like Sass and Less, to a plugin-based system using PostCSS and finally the rise of atomic CSS with tools like Tailwind
     -- the CSS space has never been this exciting before.
-previewImgUrl: logo.png
+previewImgUrl: styling.png
 ---

@@ -9,5 +9,5 @@ description:
 
     Coming from a purely "HTML/CSS and some jQuery sprinkled on top" background, TypeScript has enabled me to learn my craft a lot faster and has kickstarted
     my endeavors into other environments than the browser, including node.js.
-previewImgUrl: logo.png
+previewImgUrl: ts.png
 ---
