@@ -2,8 +2,9 @@
 import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-const entry = await getEntry('index', 'my-first-md-file');
+const entry = await getEntry('index', 'index');
 const skills = await getCollection('skills');
+const workExperiences = await getCollection('workExperience');
 const { Content, headings } = await entry.render();
 
 export const prerender = true;
@@ -22,11 +23,32 @@ export const prerender = true;
               <img
                 class="w-36"
                 transition:name={skill.data.title}
-                src={skill.data.previewImgUrl}
+                src={'/' + skill.data.previewImgUrl}
                 alt="ALT"
               />
               <h2 transition:name={skill.data.title + '_title'}>
                 {skill.data.title}
+              </h2>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2>Work Experiences</h2>
+    <ul>
+      {
+        workExperiences.map((workExperience) => (
+          <li>
+            <a href={`/work-experience/${workExperience.slug}`}>
+              <img
+                class="w-36"
+                transition:name={workExperience.data.title}
+                src={'/' + workExperience.data.previewImgUrl}
+                alt="ALT"
+              />
+              <h2 transition:name={workExperience.data.title + '_title'}>
+                {workExperience.data.title}
               </h2>
             </a>
           </li>

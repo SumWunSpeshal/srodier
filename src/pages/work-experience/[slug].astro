@@ -1,0 +1,45 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Markdown from '../../components/Markdown.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const workExperienceEntries = await getCollection('workExperience');
+  return workExperienceEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'workExperience'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <div class="absolute w-full h-[100dvh]">
+    <img
+      class="object-cover w-full h-full blur-xl brightness-50 scale-110"
+      transition:name={entry.data.title}
+      src={'/' + entry.data.previewImgUrl}
+      alt=""
+    />
+  </div>
+  <h2 transition:name={entry.data.title + '_title'} class="text-white">
+    {entry.data.title}
+  </h2>
+  <div
+    class="relative z-10 delay-200 text-white"
+    transition:name={entry.data.title + '_no-counter-part'}
+  >
+    <a href="/">Back</a>
+    <Markdown>{entry.data.description.short}</Markdown>
+    <Markdown>{entry.data.description.long}</Markdown>
+    <Content />
+  </div>
+</Layout>

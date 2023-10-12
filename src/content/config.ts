@@ -27,6 +27,7 @@ const workExperienceCollection = defineCollection({
       short: z.string(),
       long: z.string(),
     }),
+    previewImgUrl: z.string(),
   }),
 });
 
