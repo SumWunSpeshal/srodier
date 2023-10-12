@@ -8,13 +8,37 @@ const { data } = await getEntry('sidebar', 'index');
   class="bg-red-300 w-96 shrink-0 relative z-10"
   transition:name="layout_no-counter-part"
 >
-  <div>
-    <p>{data.name}</p>
-    <p>{data.title}</p>
-    <p>{data.description}</p>
-    <p>{data.contact.city}</p>
-    <p>{data.contact.country}</p>
-    <p>{data.contact.xing}</p>
-    <p>{data.contact.github}</p>
+  <div
+    class="rounded-full overflow-hidden aspect-square w-72 relative bg-blue-400 outline-4 outline-black outline border-white border-4"
+  >
+    <div
+      class="absolute inset-0 bg-white img"
+      style=`--url: url(${data.imgUrl});`
+    >
+    </div>
+    <img
+      class="object-cover w-full h-full relative"
+      src={data.imgUrl}
+      alt="Sacha Rodier"
+    />
   </div>
+  <p>{data.name}</p>
+  <p>{data.title}</p>
+  <p>{data.description}</p>
+  <p>{data.contact.city}</p>
+  <p>{data.contact.country}</p>
+  <p>{data.contact.xing}</p>
+  <p>{data.contact.github}</p>
 </aside>
+
+<style>
+  .img {
+    --offset-x: -10px;
+    --offset-y: -5px;
+    mask-image: var(--url);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: var(--offset-x) var(--offset-y);
+    -webkit-mask-position: var(--offset-x) var(--offset-y);
+  }
+</style>

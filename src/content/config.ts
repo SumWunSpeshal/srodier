@@ -43,6 +43,7 @@ const sidebarCollection = defineCollection({
     name: z.string(),
     title: z.string(),
     description: z.string(),
+    imgUrl: z.string(),
     contact: z.object({
       city: z.string(),
       country: z.string(),

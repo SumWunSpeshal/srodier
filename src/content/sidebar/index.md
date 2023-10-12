@@ -2,6 +2,7 @@
 name: Sacha Rodier
 title: Aspiring Wizard
 description: Still looking for that kick I got when my first regex worked.
+imgUrl: portrait.png
 contact:
   city: Hannover
   country: Germany
