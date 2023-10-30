@@ -9,19 +9,25 @@ const { data } = await getEntry('sidebar', 'index');
   transition:name="layout_no-counter-part"
 >
   <div class="flex justify-center">
-    <div
-      class="rounded-full overflow-hidden aspect-square w-52 relative bg-yellow-500 outline-4 outline-white outline border-black border-4"
-    >
+    <div class="inline-grid">
       <div
-        class="absolute inset-0 bg-white img"
-        style=`--url: url(/${data.imgUrl});`
+        class="col-start-1 row-start-1 rounded-full border-black border-4 translate-x-1 translate-y-1"
       >
       </div>
-      <img
-        class="object-cover w-full h-full relative"
-        src={'/' + data.imgUrl}
-        alt="Sacha Rodier"
-      />
+      <div
+        class="col-start-1 row-start-1 rounded-full overflow-hidden aspect-square w-52 relative bg-yellow-500 border-black border-4"
+      >
+        <div
+          class="absolute inset-0 bg-white img scale-110 origin-bottom"
+          style=`--url: url(/${data.imgUrl});`
+        >
+        </div>
+        <img
+          class="object-cover origin-bottom w-full h-full relative scale-110"
+          src={'/' + data.imgUrl}
+          alt="Sacha Rodier"
+        />
+      </div>
     </div>
   </div>
   <p>{data.name}</p>
@@ -35,8 +41,8 @@ const { data } = await getEntry('sidebar', 'index');
 
 <style>
   .img {
-    --offset-x: -4px;
-    --offset-y: -4px;
+    --offset-x: -6px;
+    --offset-y: -2px;
     mask-image: var(--url);
     mask-repeat: no-repeat;
     mask-size: 100%;

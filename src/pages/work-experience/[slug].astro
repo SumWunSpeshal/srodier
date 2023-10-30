@@ -22,7 +22,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <div class="absolute w-full h-[100dvh]">
+  <div class="absolute w-full h-[100dvh] overflow-hidden">
     <img
       class="object-cover w-full h-full blur-xl brightness-50 scale-110"
       transition:name={entry.data.title}

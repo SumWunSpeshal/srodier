@@ -1,5 +1,5 @@
 ---
-intro: "hello world"
+intro: 'hello world'
 ---
 
 # Title
