@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import { Form } from '../components/Form';
 import Layout from '../layouts/Layout.astro';
 
 const entry = await getEntry('index', 'index');
@@ -12,6 +13,7 @@ export const prerender = true;
 
 <Layout title="Welcome to Astro.">
   <main>
+    <Form client:visible />
     <Content />
 
     <h2>Skills</h2>
