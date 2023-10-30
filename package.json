@@ -6,15 +6,18 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "get-secrets": "op --account my.1password.eu inject -i .env.example -o .env -f"
   },
   "dependencies": {
     "@astrojs/react": "^3.0.4",
     "@astrojs/tailwind": "5.0.0",
     "@astrojs/vercel": "5.0.1",
+    "@types/nodemailer": "^6.4.13",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "astro": "3.1.4",
+    "nodemailer": "^6.9.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "3.3.3",
