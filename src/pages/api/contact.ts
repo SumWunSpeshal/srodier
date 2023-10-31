@@ -21,8 +21,6 @@ export const POST: APIRoute = async ({ request }) => {
       subject: 'Contact request',
       text: 'Success! Email successfully sent',
       html: `
-        <div>Name: ${formData.get('name')}</div>
-        <div>Email: ${formData.get('email')}</div>
         <div>Message: ${formData.get('message')}</div>
       `,
     });
