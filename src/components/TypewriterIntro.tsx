@@ -367,10 +367,8 @@ const intros = [
 
 let SyntaxHighlighter = ShitDoesntWork;
 
-if (import.meta.env.PROD) {
-  // @ts-ignore
-  SyntaxHighlighter = ShitDoesntWork.default;
-}
+// @ts-ignore
+SyntaxHighlighter = ShitDoesntWork.default || ShitDoesntWork;
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
