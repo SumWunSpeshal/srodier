@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import bytediver from '../assets/bytediver.svg';
+import db from '../assets/db.png';
+import frameworks from '../assets/frameworks.png';
+import hosting from '../assets/hosting.png';
+import neoskop from '../assets/neoskop.svg';
+import styling from '../assets/styling.png';
+import ts from '../assets/ts.png';
+import wendweb from '../assets/wendweb.svg';
+
+export interface Props {
+  name: string;
+  className?: string;
+}
+
+const { name, className } = Astro.props as Props;
+
+const imageMap = {
+  db: {
+    dimensions: 144,
+    src: db,
+    name: 'databases',
+  },
+  frameworks: {
+    dimensions: 144,
+    src: frameworks,
+    name: 'frameworks',
+  },
+  hosting: {
+    dimensions: 144,
+    src: hosting,
+    name: 'hosting',
+  },
+  styling: {
+    dimensions: 144,
+    src: styling,
+    name: 'styling',
+  },
+  ts: {
+    dimensions: 144,
+    src: ts,
+    name: 'ts',
+  },
+  wendweb: {
+    dimensions: 144,
+    src: wendweb,
+    name: 'wendweb',
+  },
+  neoskop: {
+    dimensions: 144,
+    src: neoskop,
+    name: 'neoskop',
+  },
+  bytediver: {
+    dimensions: 144,
+    src: bytediver,
+    name: 'bytediver',
+  },
+} as const satisfies Record<
+  string,
+  { dimensions: number; src: ImageMetadata; name: string }
+>;
+---
+
+<Image
+  class={className}
+  width={imageMap[name as keyof typeof imageMap].dimensions}
+  height={imageMap[name as keyof typeof imageMap].dimensions}
+  src={imageMap[name as keyof typeof imageMap].src}
+  alt={imageMap[name as keyof typeof imageMap].name}
+  transition:name={imageMap[name as keyof typeof imageMap].name}
+/>

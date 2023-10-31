@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
-import { getImage } from '../utils/image-map';
+import portrait from '../assets/portrait.png';
 
 const { data } = await getEntry('sidebar', 'index');
 ---
@@ -21,15 +21,16 @@ const { data } = await getEntry('sidebar', 'index');
       >
         <div
           class="absolute inset-0 bg-white img scale-110 origin-bottom"
-          style=`--url: url(${getImage(data.imgUrl).src});`
+          style=`--url: url(${portrait.src});`
         >
         </div>
         <Image
           class="object-cover origin-bottom w-full h-full relative scale-110"
-          src={getImage(data.imgUrl)}
-          alt="Sacha Rodier"
+          src={portrait}
           width={208}
           height={208}
+          quality="max"
+          alt="Sacha Rodier"
         />
       </div>
     </div>

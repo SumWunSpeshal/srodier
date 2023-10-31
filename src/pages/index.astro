@@ -1,10 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection, getEntry } from 'astro:content';
 import { Form } from '../components/Form';
+import SrodierImage from '../components/SrodierImage.astro';
 import { TypewriterIntro } from '../components/TypewriterIntro';
 import Layout from '../layouts/Layout.astro';
-import { getImage } from '../utils/image-map';
 
 const entry = await getEntry('index', 'index');
 const skills = await getCollection('skills');
@@ -26,14 +25,7 @@ export const prerender = true;
         skills.map((skill) => (
           <li>
             <a href={`/${skill.slug}`}>
-              <Image
-                class="w-36"
-                transition:name={skill.data.title}
-                src={getImage(skill.data.previewImgUrl)}
-                alt="ALT"
-                width={144}
-                height={144}
-              />
+              <SrodierImage className="w-36" name={skill.data.previewImgUrl} />
               <h2 transition:name={skill.data.title + '_title'}>
                 {skill.data.title}
               </h2>
@@ -49,13 +41,9 @@ export const prerender = true;
         workExperiences.map((workExperience) => (
           <li>
             <a href={`/work-experience/${workExperience.slug}`}>
-              <Image
-                class="w-36"
-                transition:name={workExperience.data.title}
-                src={getImage(workExperience.data.previewImgUrl)}
-                alt="ALT"
-                width={144}
-                height={144}
+              <SrodierImage
+                className="w-36"
+                name={workExperience.data.previewImgUrl}
               />
               <h2 transition:name={workExperience.data.title + '_title'}>
                 {workExperience.data.title}
