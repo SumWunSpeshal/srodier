@@ -14,5 +14,5 @@ description:
     While not my favourite framework, I still owe it all the transactional knowledge about state management and reactive programming that proved itself useful later on in my career. 
 
     I later got the opportunity to work professionally on projects using Gatsby, Next.js, React.js+Vite, nuxt, Svelte, Sveltekit and with this very website finally with Astro❤️.
-previewImgUrl: frameworks.png
+previewImgUrl: frameworks
 ---

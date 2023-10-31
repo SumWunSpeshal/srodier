@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Markdown from '../components/Markdown.astro';
 import Layout from '../layouts/Layout.astro';
+import { getImage } from '../utils/image-map';
 
 export const prerender = true;
 
@@ -23,11 +25,11 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
   <div class="absolute w-full h-[100dvh] overflow-hidden">
-    <img
+    <Image
       class="object-cover w-full h-full blur-xl brightness-50 scale-110"
       transition:name={entry.data.title}
-      src={entry.data.previewImgUrl}
-      alt=""
+      src={getImage(entry.data.previewImgUrl)}
+      alt="ALT"
     />
   </div>
   <h2 transition:name={entry.data.title + '_title'} class="text-white">

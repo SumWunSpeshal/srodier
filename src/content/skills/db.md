@@ -10,5 +10,5 @@ description:
 
     Currently, I am working on a project using Postgres on Heroku, still with Prisma. My experiences encompass using databases exclusively as PaaS. 
     I prefer not to manage the database on-prem. Smarter people have figured this stuff out long before me.
-previewImgUrl: db.png
+previewImgUrl: db
 ---

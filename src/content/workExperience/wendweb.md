@@ -15,5 +15,5 @@ description:
     One of them is a product configurator mainly used to calculate prices
     but also had the requirement to work offline through service workers, include authentication and manage roles.
     The other one is a simple image editing tool that helps with quickly creating CI-compliant social media postings.
-previewImgUrl: wendweb.svg
+previewImgUrl: wendweb
 ---

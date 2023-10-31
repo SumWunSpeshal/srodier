@@ -9,5 +9,5 @@ description:
 
     I continue working on various Angular applications and Typo3 websites and am currently leading the development for a data service application 
     including REST APIs, a management dashboard and data aggregator.
-previewImgUrl: bytediver.svg
+previewImgUrl: bytediver
 ---

@@ -12,5 +12,5 @@ description:
 
     Later on, I lead the development for a brand new client website forming a central entry point for the client's services and offerings 
     using Next.js and Contentful.
-previewImgUrl: neoskop.svg
+previewImgUrl: neoskop
 ---
