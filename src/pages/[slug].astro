@@ -30,6 +30,8 @@ const { Content } = await entry.render();
       transition:name={entry.data.title}
       src={getImage(entry.data.previewImgUrl)}
       alt="ALT"
+      width={208}
+      height={208}
     />
   </div>
   <h2 transition:name={entry.data.title + '_title'} class="text-white">
