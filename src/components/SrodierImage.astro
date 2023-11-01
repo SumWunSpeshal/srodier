@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import bytediver from '../assets/bytediver.svg';
 import db from '../assets/db.png';
 import frameworks from '../assets/frameworks.png';
@@ -14,6 +14,7 @@ export interface Props {
   className?: string;
 }
 
+getImage;
 const { name, className } = Astro.props as Props;
 
 const imageMap = {
@@ -61,14 +62,19 @@ const imageMap = {
   string,
   { dimensions: number; src: ImageMetadata; name: string }
 >;
+
+const optimizedImage = await getImage({
+  src: imageMap[name as keyof typeof imageMap].src,
+  alt: imageMap[name as keyof typeof imageMap].name,
+  width: imageMap[name as keyof typeof imageMap].dimensions,
+  height: imageMap[name as keyof typeof imageMap].dimensions,
+  format: 'webp',
+});
 ---
 
-<Image
+<img
+  src={optimizedImage.src}
+  alt={optimizedImage.attributes.alt}
   class={className}
-  width={imageMap[name as keyof typeof imageMap].dimensions}
-  height={imageMap[name as keyof typeof imageMap].dimensions}
-  src={imageMap[name as keyof typeof imageMap].src}
-  alt={imageMap[name as keyof typeof imageMap].name}
   transition:name={imageMap[name as keyof typeof imageMap].name}
-  transition:persist
 />
