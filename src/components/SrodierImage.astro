@@ -77,4 +77,6 @@ const optimizedImage = await getImage({
   alt={optimizedImage.attributes.alt}
   class={className}
   transition:name={imageMap[name as keyof typeof imageMap].name}
+  loading="lazy"
+  decoding="async"
 />
