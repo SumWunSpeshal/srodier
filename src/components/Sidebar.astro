@@ -2,46 +2,63 @@
 import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import portrait from '../assets/portrait.png';
+import linkedin from '../assets/socials/LI-In-Bug.png';
+import github from '../assets/socials/github-mark.png';
+import xing from '../assets/socials/xing-icon.svg';
 
 const { data } = await getEntry('sidebar', 'index');
 ---
 
 <aside
-  class="bg-red-300 w-96 shrink-0 relative z-10 border-r-4 border-black"
+  class="bg-cyan-200 w-80 shrink-0 relative z-10 border-r-4 border-black p-6 flex flex-col"
   transition:name="layout_no-counter-part"
 >
-  <div class="flex justify-center">
-    <div class="inline-grid">
-      <div
-        class="col-start-1 row-start-1 rounded-full border-black border-4 translate-x-1 translate-y-1"
-      >
-      </div>
-      <div
-        class="col-start-1 row-start-1 rounded-full overflow-hidden aspect-square w-52 relative bg-yellow-500 border-black border-4"
-      >
+  <div>
+    <div class="flex justify-center mb-8">
+      <div class="inline-grid">
         <div
-          class="absolute inset-0 bg-white img scale-110 origin-bottom"
-          style=`--url: url(${portrait.src});`
+          class="col-start-1 row-start-1 rounded-full overflow-hidden aspect-square w-52 relative bg-orange-300 border-black border-4 ring-inset ring-[6px] ring-white"
         >
+          <div
+            class="absolute inset-0 bg-white img scale-110 origin-bottom"
+            style=`--url: url(${portrait.src});`
+          >
+          </div>
+          <Image
+            class="object-cover origin-bottom w-full h-full relative scale-110"
+            src={portrait}
+            width={208}
+            height={208}
+            quality="max"
+            alt="Sacha Rodier"
+          />
         </div>
-        <Image
-          class="object-cover origin-bottom w-full h-full relative scale-110"
-          src={portrait}
-          width={208}
-          height={208}
-          quality="max"
-          alt="Sacha Rodier"
-        />
       </div>
     </div>
+    <h2 class="text-4xl font-medium mb-4">{data.name}</h2>
+    <div class="text-gray-800 font-light gap-3 grid">
+      <p>{data.title}</p>
+      <hr class="w-10 border-t-2 border-gray-600" />
+      <p>{data.description}</p>
+      <hr class="w-10 border-t-2 border-gray-600" />
+      <p>Web developer from {data.contact.city}, {data.contact.country}</p>
+    </div>
   </div>
-  <p>{data.name}</p>
-  <p>{data.title}</p>
-  <p>{data.description}</p>
-  <p>{data.contact.city}</p>
-  <p>{data.contact.country}</p>
-  <p>{data.contact.xing}</p>
-  <p>{data.contact.github}</p>
+
+  <div class="mt-auto flex gap-4 items-center p-4 bg-cyan-100 rounded-2xl">
+    <a href={data.contact.github} target="_blank">
+      <span class="sr-only">Link to my Github</span>
+      <Image src={github} width={40} height={40} alt="Github" />
+    </a>
+    <a href={data.contact.linkedin} target="_blank">
+      <span class="sr-only">Link to my LinkedIn</span>
+      <Image src={linkedin} width={40} height={40} alt="LinkedIn" />
+    </a>
+    <a href={data.contact.xing} target="_blank">
+      <span class="sr-only">Link to my xing</span>
+      <Image src={xing} width={40} height={40} alt="xing" />
+    </a>
+  </div>
 </aside>
 
 <style>

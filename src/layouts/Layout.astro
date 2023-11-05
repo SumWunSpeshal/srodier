@@ -33,7 +33,7 @@ const { title } = Astro.props as Props;
       }
     </script>
   </head>
-  <body>
+  <body class="bg-amber-50">
     <div class="flex h-[100dvh] overflow-hidden">
       <Sidebar />
       <div class="grow relative overflow-y-auto overflow-x-hidden">
@@ -41,6 +41,13 @@ const { title } = Astro.props as Props;
       </div>
     </div>
     <style is:global>
+      @font-face {
+        font-family: 'Radikal';
+        src: url('/radikal-light.woff2') format('woff2');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
       @font-face {
         font-family: 'Radikal';
         src: url('/radikal-regular.woff2') format('woff2');

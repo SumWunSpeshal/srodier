@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ['Radikal', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        paper: '#f0f0df',
+      },
     },
   },
   plugins: [],
