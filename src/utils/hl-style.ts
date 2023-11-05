@@ -20,7 +20,7 @@ export const hlStyle = {
   },
   'pre[class*="language-"]': {
     color: '#ccc',
-    background: '#2d2d2d',
+    // background: '#2d2d2d',
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
     fontSize: '1em',
     textAlign: 'left',

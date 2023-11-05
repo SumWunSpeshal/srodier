@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ShitDoesntWork from 'react-syntax-highlighter/dist/cjs/prism-light';
 import { hlStyle } from '../utils/hl-style';
 import { jsx } from '../utils/jsx';
@@ -374,6 +374,8 @@ SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 export function TypewriterIntro() {
   const [count, setCount] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let done = false;
@@ -394,12 +396,32 @@ export function TypewriterIntro() {
     increment();
   }, []);
 
+  useEffect(() => {
+    setScrollY(window.scrollY);
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  function getProgress() {
+    const height = ref.current?.getBoundingClientRect().height;
+    if (!height) {
+      return 1;
+    }
+
+    return 1 - Math.min(scrollY / height, 1);
+  }
+
   const codeStr = `export default function Home({ visitor }) {
   return ${intros[count]}
 }`;
 
   return (
-    <div>
+    <div
+      ref={ref}
+      style={{ '--op': getProgress() }}
+      className="bg-code-bg/[var(--op,1)]"
+    >
       <SyntaxHighlighter
         language="jsx"
         style={hlStyle}

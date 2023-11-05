@@ -10,6 +10,7 @@ module.exports = {
       },
       colors: {
         paper: '#f0f0df',
+        'code-bg': '#2d2d2d',
       },
     },
   },
