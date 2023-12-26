@@ -36,7 +36,7 @@ const { Content } = await entry.render();
     class="relative z-10 delay-200 text-white"
     transition:name={entry.data.title + '_no-counter-part'}
   >
-    <a href="/">Back</a>
+    <button type="button" onclick="history.back()">Back</button>
     <Markdown>{entry.data.description.short}</Markdown>
     <Markdown>{entry.data.description.long}</Markdown>
     <Content />
